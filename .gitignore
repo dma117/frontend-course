@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+bundle.js
+bundle.css
 /storage/*.key
 /vendor
 .env
