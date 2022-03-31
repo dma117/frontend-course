@@ -1,0 +1,16 @@
+.Layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__main {
+        flex: 1;
+        background-color: hsl(180, 100%, 40%);
+    }
+
+    &__header, &__footer {
+        background-color: hsl(180, 100%, 30%);
+        padding: 1.5rem;
+        font-size: large;
+    }
+}
