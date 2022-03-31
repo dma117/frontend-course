@@ -14,4 +14,5 @@ const mix = require('laravel-mix');
 mix.js('resources/js/app.js', 'public/bundle.js')
     .postCss('resources/css/app.css', 'public/bundle.css', [
         //
-    ]);
+    ])
+    .browserSync('localhost');
