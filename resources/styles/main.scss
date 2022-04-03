@@ -1,0 +1,10 @@
+@import "../layouts/base.scss";
+
+$test-color: #eeff02;
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: underline overline $test-color;
+    margin-left: 1rem;
+    color: green;
+}
