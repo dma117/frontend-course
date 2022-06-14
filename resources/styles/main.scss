@@ -1,10 +1,26 @@
+@import "./uikit.scss";
 @import "../layouts/base.scss";
 
-$test-color: #eeff02;
+// Variables 
+$color-black: #000;
+$color-grey: #666;
+$color-green--dark: #254741;
+$test-color: #5f6141;
+
+// Functions
+@function toRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+// Elements
+@import "./elements.scss";
+
+// Components
+@import "../components/header/header.scss";
+@import "../components/site-nav/site-nav.scss";
 
 h1 {
-    font-family: 'Montserrat', sans-serif;
-    text-decoration: underline overline $test-color;
+    text-decoration: underline $test-color;
     margin-left: 1rem;
     color: green;
 }

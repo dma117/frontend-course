@@ -8,9 +8,11 @@
         background-color: hsl(180, 100%, 40%);
     }
 
-    &__header, &__footer {
+    &__footer {
         background-color: hsl(180, 100%, 30%);
-        padding: 1.5rem;
-        font-size: large;
     }
+}
+
+.Container {
+    @extend .uk-container;
 }
