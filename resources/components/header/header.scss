@@ -5,10 +5,42 @@
 
     &__logo {
         width: 160px;
-        margin-right: 80px;
+        margin-right: 6.4%;
+
+        @include vw-xl-down {
+            margin-right: 3.5%;
+        }
+    }
+
+    &__menu {
+        @include vw-lg-down {
+            display: none;
+        }
     }
 
     &__phone {
         margin-x: auto 24px;
+
+        @include vw-md-down {
+            display: none;
+        }
+    }
+
+    &__feedbackButton {
+        @include vw-md-down {
+            display: none;
+        }
+    }
+
+    &__offCanvasButton {
+        margin-left: 16px;
+
+        @include vw-lg-up {
+            display: none;
+        }
+
+        @include vw-md-down {
+            margin-left: auto;
+        }
     }
 }

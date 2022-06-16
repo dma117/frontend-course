@@ -2,7 +2,7 @@
     display: flex;
     font-size: toRem(14px);
     line-height: 1.2;
-    color: $color-green--dark;
+    color: $color-green--dirty;
 
     &:hover,
     &:focus,
@@ -20,5 +20,52 @@
 
     &--primary {
         @extend .uk-button-primary;
+    }
+
+    &--secondary {
+        @extend .uk-button-secondary;
+    }
+
+    &--icon {
+        padding-x: 16px;
+    }
+}
+
+.OffCanvas {
+    &__layout {
+        display: flex;
+        flex-flow: column;
+        padding-y: toEm(105px) toEm(54px);
+        background-color: $color-green;
+        color: #FFF;
+    }
+
+    &__close {
+        top: 31px;
+        right: 39px;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: rgba(white, 0.2);
+        cursor: pointer;
+
+        img {
+            display: block;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $color-green--dark;
+        } 
+    }
+
+    &__nav {
+        flex-grow: 1;
+        margin-bottom: toEm(24px);
+        font-size: toEm(18px);
+    }
+
+    &__contacts {
+        font-size: toEm(14px);
     }
 }

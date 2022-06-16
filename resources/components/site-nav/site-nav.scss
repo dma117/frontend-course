@@ -2,13 +2,45 @@
     display: flex;
     list-style: none;
 
+    &--column {
+        flex-flow: column;
+
+        %SiteNav--column__listItem {
+            :root & {
+                margin-right: unset;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: toEm(24px);
+            }
+        }
+    }
+
+    &--white {
+        %SiteNav--white__item {
+            :root & {
+                color: white;
+            }
+
+            &:hover, 
+            &:focus,
+            &:active {
+                color: $color-grey--light;
+            }
+        }
+    }
+
     &__listItem {
+        @extend %SiteNav--column__listItem;
+
         &:not(:last-child) {
             margin-right: 24px;
         }
     }
 
     &__item {
+        @extend %SiteNav--white__item;
+
         line-height: 1.2;
         color: $color-grey;
 

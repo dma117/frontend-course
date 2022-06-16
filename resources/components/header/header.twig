@@ -39,6 +39,37 @@
     </button>
 {% endmacro %}
 
+{% macro offCanvasButton() %}
+    <button 
+        type="button"
+        id="offcanvas-button" 
+        class="Button Button--primary Button--icon" 
+        data-uk-toggle="target: #offcanvas">
+        <img src="{{ asset('assets/icons/offCanvasBtnLines-1x.svg') }}" alt="" width="24" height="14">
+    </button>
+{% endmacro %}
+
+{% macro offCanvas(scope) %}
+    <div id="offcanvas" class="OffCanvas" data-uk-offcanvas="overlay: true; flip: true">
+        <div class="uk-offcanvas-bar OffCanvas__layout">
+            <button type="button" class="uk-offcanvas-close Button OffCanvas__close">
+                <img src="{{ asset('assets/icons/offCanvasBtnCross-1x.svg') }}" alt="" width="12" height="12">
+                </img>
+            </button>
+            <nav class="OffCanvas__nav">
+                {% include '@components/site-nav/site-nav.twig' with {
+                    items: scope.menu,
+                    column: true,
+                    white: true,
+                } %}
+            </nav>
+            <div class="OffCanvas__contacts">
+                {% include "@components/contacts/contacts.twig" %}
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
 {% macro content(scope) %}
     <div class="Container Header">
         <div class="Header__logo">
@@ -46,17 +77,27 @@
         </div>
 
         <div class="Header__menu">
-            {% include "@components/site-nav/site-nav.twig" with { items: scope.menu } %}
+            {% include "@components/site-nav/site-nav.twig" with { 
+                items: scope.menu,
+                column: false,
+                white: false,
+            } %}
         </div>
 
         <div class="Header__phone">
             {{ macros.phone(scope.phone) }}
         </div>
 
-        <div class="Header__button">
+        <div class="Header__feedbackButton">
             {{ macros.button }}
         </div>
+
+        <div class="Header__offCanvasButton">
+            {{ macros.offCanvasButton }}
+        </div>
     </div>
+
+    {{ macros.offCanvas(scope) }}
 {% endmacro %}
 
 {{ macros.content(scope) }}
