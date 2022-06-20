@@ -5,8 +5,10 @@
 // Variables 
 $color-black: #000;
 $color-grey: #666;
+$color-grey--lighter: #C6C6C6;
 $color-grey--light: #D8D8D8;
 $color-green: #029F59;
+$color-green--light: #03B766;
 $color-green--dark: #017F47;
 $color-green--dirty: #254741;
 $test-color: #5f6141;
@@ -22,10 +24,14 @@ $test-color: #5f6141;
 // Elements
 @import "./elements.scss";
 
+// Modules
+@import "./swiper.scss";
+
 // Components
 @import "../components/header/header.scss";
 @import "../components/site-nav/site-nav.scss";
 @import "../components/contacts/contacts.scss";
+@import "../components/slider/slider.scss";
 
 h1 {
     text-decoration: underline $test-color;

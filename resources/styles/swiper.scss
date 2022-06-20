@@ -1,0 +1,53 @@
+html:root {
+    --swiper-navigation-size: 48px;
+    --swiper-pagination-bullet-size: 12px;
+    --swiper-pagination-bullet-horizontal-gap: 8px;
+    --swiper-pagination-color: #{$color-green--light};
+    --swiper-pagination-bullet-inactive-color: #{$color-grey--lighter};
+    --swiper-pagination-bullet-inactive-opacity: 1;
+}
+
+.swiper-button {
+    &-next,
+    &-prev {
+        padding: 0;
+
+        :root & {
+            width: 48px;
+
+            @include vw-sm-down {
+                display: none;
+            }
+        }
+
+        &::after {
+            display: none;
+        } 
+    }
+
+    &-prev {
+        :root & {
+            left: 16px;
+        }
+    }
+    
+    &-next {
+        :root & {
+            right: 16px;
+        }
+    }
+}
+
+.swiper-horizontal {
+    &>.swiper-pagination-bullets {
+        :root & {
+            bottom: 40px;
+        }
+
+        @include vw-sm-down {
+            display: none;
+        }
+    }
+}
+
+

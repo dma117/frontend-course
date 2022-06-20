@@ -1,8 +1,36 @@
  {% extends '@layouts/base.twig' %}
 
+{%
+    set scope = {
+        slides: [
+            {
+                desktopImage: asset('assets/imgs/slide-desktop-1x.png'),
+                mobileImage: asset('assets/imgs/slide-mobile-1x.png'),
+                title: 'Проектируем<br>и строим загородные дома',
+                text: 'Строим дома "под ключ": от этапа проектирования и до финишной отделки помещений',
+            },
+            {
+                desktopImage: asset('assets/imgs/slide-desktop-1x.png'),
+                mobileImage: asset('assets/imgs/slide-mobile-1x.png'),
+                title: 'Quis aute iure reprehenderit in voluptate.',
+                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ',
+            },
+            {
+                desktopImage: asset('assets/imgs/slide-desktop-1x.png'),
+                mobileImage: asset('assets/imgs/slide-mobile-1x.png'),
+                title: 'Ut enim ad minim veniam, quis nostrum exercitationem.',
+                text: 'Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            },
+        ],
+    }
+%}
+
  {% block main %}
     <div class="Container">
-        <h1>Hello, world!</h1>
-        <a href="#">LINK!</a>
+        <div class="Layout__section Layout__section--slider">
+            {% include '@components/slider/slider.twig' with {
+                items: scope.slides,
+            } %}
+        </div>
     </div>
  {% endblock %}
