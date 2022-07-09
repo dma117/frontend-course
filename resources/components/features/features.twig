@@ -1,0 +1,44 @@
+{% import _self as macros %}
+
+{% set scope = {
+    intro: {
+        header: "Каждый проект<br>для нас — важный",
+        description: "Мы строительная компания полного цикла.<br>Вникаем во все детали, разрабатываем планировку<br>будущего дома, продумываем конструктивные решения<br>и общую архитектурную концепцию",
+    },
+    features: features ?? [],
+} %}
+
+{% macro content(scope) %}
+    <div class="FeaturedSection">
+        <div class="MainInfo">
+            {% set main_info = {
+                header: scope.intro.header ?? "header",
+                description: scope.intro.description ?? "description",
+            } %}
+            
+            <h2 class="MainInfo__header">
+                {{ main_info.header|raw }}
+            </h2>
+            <p class="MainInfo__description">
+                {{ main_info.description|raw }}
+            </p>
+        </div>
+        <ul class="Details">
+            {% for feature in scope.features %}
+                {% set item = {
+                    icon: feature.icon ?? 'icon',
+                    header: feature.header ?? 'header',
+                    description: feature.description ?? 'description',
+                } %}
+
+                <li class="Feature">
+                    <img class="Feature__icon" src="{{ item.icon }}" alt="">
+                    <h3 class="Feature__header">{{ item.header }}</h3>
+                    <p class="Feature__description">{{ item.description }}</p>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+
+{{ macros.content(scope) }}

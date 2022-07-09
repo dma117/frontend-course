@@ -5,7 +5,6 @@
 
     &__main {
         flex: 1;
-        background-color: hsl(180, 100%, 40%);
     }
 
     &__footer {
@@ -20,6 +19,14 @@
 
             @include vw-sm-down {
                 padding-y: 20px 40px;
+            }
+        }
+
+        &--featured {
+            padding-y: 60px 120px;
+
+            @include vw-sm-down {
+                padding-y: 40px 80px;
             }
         }
     }

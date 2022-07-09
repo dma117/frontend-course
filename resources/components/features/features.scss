@@ -1,0 +1,75 @@
+.FeaturedSection {
+    display: flex;
+    align-items: flex-end;
+
+    @include vw-sm-down {
+        flex-direction: column;
+        align-items: initial;
+    }
+}
+
+.MainInfo {
+    min-width: 49.37%;
+
+    &__header {
+        font-family: $global-heading-font-family;
+        font-size: toRem(38px);
+        font-weight: $font-weight-bold;
+        line-height: 1.2;
+        color: $color-black;
+    }
+
+    &__description {
+        margin-y: 1.6em 0.8em;
+        font-size: toEm(20px);
+        font-weight: $font-weight-small;
+        color: $color-grey;
+    }
+
+    &__description br:first-of-type{
+        display: block;
+        content: "";
+        margin-top: 1.35em;
+    }
+}
+
+.Details {
+    margin-left: toEm(16px);
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: toEm(16px);
+
+    @include vw-lg-down {
+        grid-template-columns: none;
+        grid-template-rows: repeat(2, minmax(0, 1fr));
+    }
+
+    @include vw-sm-down {
+        margin-left: 0;
+        margin-top: toEm(33px);
+        gap: toEm(12px);
+    }
+}
+
+.Feature {
+    background-color: #F5F7F3;
+    padding: toEm(24px);
+    border-radius: 20px;
+
+    &__header {
+        margin-top: 1em;
+        font-family: $global-heading-font-family;
+        font-weight: $font-weight-medium;
+        line-height: 1.2;
+        font-size: toRem(24px);
+        color: $color-black;
+    }
+
+    &__description {
+        margin-top: 0.4em;
+        font-weight: $font-weight-small;
+        font-size: toRem(20px);
+        color: $color-grey;
+    }
+}

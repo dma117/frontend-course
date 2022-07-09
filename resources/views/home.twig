@@ -22,6 +22,18 @@
                 text: 'Excepteur sint obcaecat cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
             },
         ],
+        features_range: [
+            {
+                icon: asset('assets/icons/house.svg'),
+                header: "57 домов",
+                description: "спроектировали и построили под ключ",
+            },
+            {
+                icon: asset('assets/icons/calender.svg'),
+                header: "14 лет",
+                description: "мы на рынке загородного строительства",
+            },
+        ],
     }
 %}
 
@@ -30,6 +42,11 @@
         <div class="Layout__section Layout__section--slider">
             {% include '@components/slider/slider.twig' with {
                 items: scope.slides,
+            } %}
+        </div>
+        <div class="Layout__section Layout__section--featured">
+            {% include '@components/features/features.twig' with {
+                features: scope.features_range,
             } %}
         </div>
     </div>
